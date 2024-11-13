@@ -1,0 +1,47 @@
+
+using System;
+
+public class MyRectangle
+{
+    private double sideA;
+    private double sideB;
+
+    public MyRectangle(double sideA, double sideB)
+    {
+        this.sideA = sideA;
+        this.sideB = sideB;
+    }
+
+    public double CalcArea()
+    {
+        return sideA * sideB;
+    }
+
+    public double CalcPerimeter()
+    {
+        return 2 * (sideA + sideB);
+    }
+
+    public double Area
+    {
+        get { return CalcArea(); }
+    }
+
+    public double Perimeter
+    {
+        get { return CalcPerimeter(); }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        double sideA = double.Parse(Console.ReadLine());
+        double sideB = double.Parse(Console.ReadLine());
+        MyRectangle a = new MyRectangle(sideA, sideB);
+        Console.WriteLine(a.Area);
+        Console.WriteLine(a.Perimeter);
+        Console.ReadKey();
+    }
+}
